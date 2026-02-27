@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os"
 	"fmt"
-	"strings"
+	"os"
 	"strconv"
-)	
+	"strings"
+)
 
 func main() {
 	data, err := os.ReadFile("input.txt")
@@ -33,7 +33,7 @@ func part1(lines []string) int {
 		}
 	}
 
-	return answer 
+	return answer
 }
 
 func rotate(number int, dir byte, n int) int {
@@ -62,7 +62,7 @@ func part2(lines []string) int {
 		}
 	}
 
-	return answer 
+	return answer
 }
 
 func rotateOnce(number int, dir byte) (int, bool) {
@@ -85,7 +85,7 @@ func rotateOnce(number int, dir byte) (int, bool) {
 func parseLine(line string) (byte, int) {
 	dir, nStr := line[0], line[1:]
 
-	n, err := strconv.Atoi(nStr) 
+	n, err := strconv.Atoi(nStr)
 	if err != nil {
 		panic(err)
 	}

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
 	"strings"
-)	
+)
 
 func main() {
 	data, err := os.ReadFile("input.txt")

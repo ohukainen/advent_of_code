@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
 	"strconv"
-)	
+	"strings"
+)
 
 func main() {
 	data, err := os.ReadFile("input.txt")
@@ -28,7 +28,7 @@ func part1(ranges []string) int {
 
 		answer += addIfRepeats(first, last)
 	}
-	
+
 	return answer
 }
 
@@ -37,13 +37,13 @@ func addIfRepeats(first int, last int) int {
 
 	for i := first; i <= last; i++ {
 		iStr := strconv.Itoa(i)
-		if len(iStr) % 2 == 1 {
+		if len(iStr)%2 == 1 {
 			continue
 		}
 
-		middle := len(iStr)/2
+		middle := len(iStr) / 2
 		if iStr[0:middle] == iStr[middle:] {
-			sum += i 
+			sum += i
 		}
 	}
 	return sum
@@ -57,7 +57,7 @@ func part2(ranges []string) int {
 
 		answer += addAnyRepeats(first, last)
 	}
-	
+
 	return answer
 }
 
@@ -77,18 +77,18 @@ func repeats(id int) bool {
 	length := len(idStr)
 
 	for segments := 2; segments <= length; segments++ {
-		if length % segments != 0 {
+		if length%segments != 0 {
 			continue
 		}
 		segmentLen := length / segments
-		
+
 		for segment := range segments {
 			start := segment * segmentLen
 			middle := start + segmentLen
 			end := middle + segmentLen
 
 			if idStr[start:middle] != idStr[middle:end] {
-				break 
+				break
 			}
 
 			if end == length {
@@ -96,7 +96,7 @@ func repeats(id int) bool {
 			}
 		}
 	}
-	return false 
+	return false
 }
 
 func parseRange(rangeStr string) (int, int) {
